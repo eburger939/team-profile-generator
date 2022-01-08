@@ -3,6 +3,7 @@ const fs = require('fs')
 const Manager = require('./lib/manager');
 const Intern = require('./lib/intern')
 const Engineer = require('./lib/engineer')
+const renderMarkdown = require('./src/renderMarkdown');
 
 // const template = require('template.html')
 
@@ -13,7 +14,7 @@ function init() {
   .prompt([
     {
       type: 'input',
-      message: "Team member's name",
+      message: "Team manager's name",
       name: 'name',
     },
       {
@@ -58,7 +59,7 @@ init();
             newIntern();
             break; 
           default:
-            buildTeam();
+            buildTeam(team);
         }
       })
     }
@@ -131,6 +132,30 @@ init();
       
     }
 
-    function buildTeam() {
-      console.log(team)  
+    function buildTeam(team) {
+      console.log(team) 
+      const allManager = team.filter(function(role) {
+        return role.officeNumber
+        
+      });
+   console.log(allManager)
+   const allEngineer = team.filter(function(role) {
+     return role.github
+   });
+   console.log(allEngineer)
+   const allIntern = team.filter(function(role){
+     return role.school
+    
+   })
+  //  const strIntern = JSON.stringify(allIntern)
+   console.log(Object.values(allIntern))
+  //     fs.writeFile(('index.html'), renderMarkdown(strIntern), err => {
+  //       err ? console.log(err) : console.log('Building your team...')
+     
+  //  });
+    }
+
+
+    function createCards(employees) {
+      employees.forEach(())
     }
