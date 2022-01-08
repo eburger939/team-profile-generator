@@ -1,9 +1,42 @@
+.body {
+    background-color: rgb(37, 37, 37);
+}
+
 .custom-jumbotron {
     background-color: rgb(37, 37, 37);
     color: white;
     font-size: 50px;
     text-align: center;
     padding: 40px;
-    border-bottom: turquoise solid 5px;
+    border-bottom: turquoise solid 10px;
+    margin-bottom: 20px;
 }
 
+.custom-row {
+    align-items: center;
+}
+
+.info-list {
+    margin: 10px;
+}
+
+
+.custom-manager-body {
+    background-color: rgb(209, 44, 113);
+    color: white;
+    border-bottom: 2px solid rgb(37, 37, 37);
+}
+.custom-engineer-body {
+    background-color: rgb(122, 62, 218);
+    color: white;
+    border-bottom: 2px solid rgb(37, 37, 37);
+}
+.custom-intern-body {
+    background-color: rgb(59, 62, 233);
+    color: white;
+    border-bottom: 2px solid rgb(37, 37, 37);
+}
+
+.custom-column {
+    margin-top: 20px;
+}

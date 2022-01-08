@@ -4,7 +4,7 @@ const Manager = require('./lib/manager');
 const Intern = require('./lib/intern')
 const Engineer = require('./lib/engineer')
 const renderMarkdown = require('./src/renderMarkdown');
-let mangCard = ''
+
 
 
 // const template = require('template.html')
@@ -135,47 +135,13 @@ init();
     }
 
     function buildTeam(team) {
-      // console.log(team) 
-      const titles = team.map(person => {
-        const tObj = { ...person };
-      
-        if (tObj.officeNumber) {
-          tObj.title = 'Manager'
-        } else if (tObj.github) {
-          tObj.title = 'engineer'
-        } else {
-          tObj.title = 'intern'
-        }
-        return tObj
-        
-        
-      })
-      // console.log(titles)
-      const filterManager = titles.filter(function(role) {
-        return role.title == 'Manager'
-        })
-        console.log(filterManager)
-        filterManager.forEach(mang => {
-          mangCard += `<div class="col-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">${mang.name}</h5>
-              <p class="card-text">Manager</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${mang.id}</li>
-              <li class="list-group-item">Email: ${mang.email}</li>
-              <li class="list-group-item">Office Number: ${mang.officeNumber}</li>
-            </ul>
-          </div>
-          </div>`
-        })
-      
-
-      fs.writeFile(('index.html'), renderMarkdown(mangCard), err => {
+      fs.writeFile(('createindex.html'), renderMarkdown(team), err => {
         err ? console.log(err) : console.log('Building your team...')
-        
-    })
-  }
-  
+
+
+
+
+
+  })
+}
 
