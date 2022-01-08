@@ -1,7 +1,31 @@
+// .map()
+// createCard()
+
+
+// function createCard()
+//   const allManager = team.filter(function(role) {
+//     return role.officeNumber
+//   });
+
+//     allManager.forEach(function(each) {
+
+      
+// })
+//   console.log(allManager)
+//   const allEngineer = team.filter(function(role) {
+//     return role.github
+// });
+//   console.log(allEngineer)
+//   const allIntern = team.filter(function(role){
+//     return role.school
+
+// })
 
 
 
-function renderMarkdown(strIntern) {
+
+
+function renderMarkdown(titles) {
     return `<!doctype html>
     <html lang="en">
       <head>
@@ -17,7 +41,7 @@ function renderMarkdown(strIntern) {
         <h1>Hello, world!</h1>
     
         <div class="card">
-        ${strIntern.name}
+        ${titles.id}
     
         </div>
     

@@ -1,0 +1,9 @@
+.custom-jumbotron {
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    padding: 40px;
+    border-bottom: turquoise solid 5px;
+}
+

@@ -5,6 +5,7 @@ const Intern = require('./lib/intern')
 const Engineer = require('./lib/engineer')
 const renderMarkdown = require('./src/renderMarkdown');
 
+
 // const template = require('template.html')
 
 let team = [];
@@ -133,29 +134,50 @@ init();
     }
 
     function buildTeam(team) {
-      console.log(team) 
-      const allManager = team.filter(function(role) {
-        return role.officeNumber
+      // console.log(team) 
+      const titles = team.map(person => {
+        const tObj = { ...person };
+      
+        if (tObj.officeNumber) {
+          tObj.title = 'manager'
+        } else if (tObj.github) {
+          tObj.title = 'engineer'
+        } else {
+          tObj.title = 'intern'
+        }
+        return tObj
         
-      });
-   console.log(allManager)
-   const allEngineer = team.filter(function(role) {
-     return role.github
-   });
-   console.log(allEngineer)
-   const allIntern = team.filter(function(role){
-     return role.school
-    
-   })
+      })
+      // const mappedTeam = JSON.stringify(titles)
+      console.log(titles)
+      fs.writeFile(('index.html'), renderMarkdown(titles), err => {
+        err ? console.log(err) : console.log('Building your team...')
+    })
+  }
+
+    // function nowFilter (titles) {
+    //   const allManager = titles.filter(function(role) {
+    //     return role.title = "manager"
+    // });
+    //   console.log(allManager)
+    //   const allEngineer = titles.filter(function(role) {
+    //       return role.title = "engineer"
+    // });
+    //   console.log(allEngineer)
+//       const allIntern = titles.filter(function(role){
+//           return role.title = "intern"
+// })
+//     console.log(allIntern)
+
+  
   //  const strIntern = JSON.stringify(allIntern)
-   console.log(Object.values(allIntern))
+  //  console.log(Object.values(allIntern))
   //     fs.writeFile(('index.html'), renderMarkdown(strIntern), err => {
   //       err ? console.log(err) : console.log('Building your team...')
      
   //  });
-    }
 
 
-    function createCards(employees) {
-      employees.forEach(())
-    }
+    // function createCards(employees) {
+    //   employees.forEach(())
+    // }
