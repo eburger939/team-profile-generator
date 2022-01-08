@@ -4,6 +4,7 @@ const Manager = require('./lib/manager');
 const Intern = require('./lib/intern')
 const Engineer = require('./lib/engineer')
 const renderMarkdown = require('./src/renderMarkdown');
+let mangCard = ''
 
 
 // const template = require('template.html')
@@ -47,7 +48,7 @@ init();
       inquirer.prompt([
         {
           type: "list",
-          message:"What team memeber would you like to create?",
+          message:"What team member would you like to create?",
           name: "option",
           choices:["Engineer", "Intern", "Exit & Build team!"]
         }
@@ -139,7 +140,7 @@ init();
         const tObj = { ...person };
       
         if (tObj.officeNumber) {
-          tObj.title = 'manager'
+          tObj.title = 'Manager'
         } else if (tObj.github) {
           tObj.title = 'engineer'
         } else {
@@ -147,37 +148,34 @@ init();
         }
         return tObj
         
+        
       })
-      // const mappedTeam = JSON.stringify(titles)
-      console.log(titles)
-      fs.writeFile(('index.html'), renderMarkdown(titles), err => {
+      // console.log(titles)
+      const filterManager = titles.filter(function(role) {
+        return role.title == 'Manager'
+        })
+        console.log(filterManager)
+        filterManager.forEach(mang => {
+          mangCard += `<div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">${mang.name}</h5>
+              <p class="card-text">Manager</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">ID: ${mang.id}</li>
+              <li class="list-group-item">Email: ${mang.email}</li>
+              <li class="list-group-item">Office Number: ${mang.officeNumber}</li>
+            </ul>
+          </div>
+          </div>`
+        })
+      
+
+      fs.writeFile(('index.html'), renderMarkdown(mangCard), err => {
         err ? console.log(err) : console.log('Building your team...')
+        
     })
   }
-
-    // function nowFilter (titles) {
-    //   const allManager = titles.filter(function(role) {
-    //     return role.title = "manager"
-    // });
-    //   console.log(allManager)
-    //   const allEngineer = titles.filter(function(role) {
-    //       return role.title = "engineer"
-    // });
-    //   console.log(allEngineer)
-//       const allIntern = titles.filter(function(role){
-//           return role.title = "intern"
-// })
-//     console.log(allIntern)
-
   
-  //  const strIntern = JSON.stringify(allIntern)
-  //  console.log(Object.values(allIntern))
-  //     fs.writeFile(('index.html'), renderMarkdown(strIntern), err => {
-  //       err ? console.log(err) : console.log('Building your team...')
-     
-  //  });
 
-
-    // function createCards(employees) {
-    //   employees.forEach(())
-    // }

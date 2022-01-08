@@ -1,26 +1,6 @@
-// .map()
-// createCard()
+function createCard(eachEmployee) {
 
-
-// function createCard()
-//   const allManager = team.filter(function(role) {
-//     return role.officeNumber
-//   });
-
-//     allManager.forEach(function(each) {
-
-      
-// })
-//   console.log(allManager)
-//   const allEngineer = team.filter(function(role) {
-//     return role.github
-// });
-//   console.log(allEngineer)
-//   const allIntern = team.filter(function(role){
-//     return role.school
-
-// })
-
+}
 
 
 
@@ -32,18 +12,22 @@ function renderMarkdown(titles) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    
+    <link rel="stylesheet" href="./dist/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     
         <title>Hello, world!</title>
       </head>
       <body>
-        <h1>Hello, world!</h1>
-    
-        <div class="card">
-        ${titles.id}
-    
-        </div>
+        <div class="jumbotron jumbotron-fluid custom-jumbotron">
+          <div class="container">
+            <h1 class="display-4">Team Generator</h1>
+          </div>
+          </div>
+
+          <div class="row">
+          ${titles}
+          </div>
+
     
     
     
