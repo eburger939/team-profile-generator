@@ -95,6 +95,9 @@ console.log(filterIntern)
 }
 
 
+
+
+
 function renderMarkdown(team) {
   mapping(team)
     return `<!doctype html>

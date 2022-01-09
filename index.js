@@ -42,7 +42,7 @@ function init() {
       teamMember()
   });
 }
-init();
+
 
     function teamMember() {
       inquirer.prompt([
@@ -144,4 +144,4 @@ init();
 
   })
 }
-
+init();
