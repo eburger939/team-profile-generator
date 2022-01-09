@@ -2,6 +2,14 @@
 const Engineer = require('../lib/engineer')
 
 describe("Engineer", () => {
+    describe("getEmail", () => {
+        it('should return the email of the employee', () => {
+            const newEmail = "emb.burger@yahoo.com"
+
+            const result = new Engineer('Emily', 26, 'emb.burger@yahoo.com').getEmail(newEmail)
+            expect(result).toBe(newEmail)
+        })
+    })
     describe("getGitHub", () => {
         it('should return the github username of the engineer', () => {
             const username = "eburger939"

@@ -2,6 +2,14 @@
 const Intern = require('../lib/intern')
 
 describe("Intern", () => {
+    describe("getID", () => {
+        it('should return the ID of the intern', () => {
+            const newID = 26
+
+            const result = new Intern('Emily', 26).getId(newID)
+            expect(result).toBe(newID)
+        })
+    })
     describe("getSchool", () => {
         it('should return the school of the intern', () => {
             const newSchool = "University of Iowa"
