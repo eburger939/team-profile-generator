@@ -16,22 +16,22 @@ function init() {
   .prompt([
     {
       type: 'input',
-      message: "Team manager's name",
+      message: "What is the team manager's name?",
       name: 'name',
     },
       {
         type: 'input',
-        message: 'Employee ID:',
+        message: "What is the manager's employee ID?",
         name: 'ID',
       },
       {
         type: 'input',
-        message: 'Employee email address:',
+        message: "What is the manager's email address?",
         name: 'email',
       },
       {
         type: 'input',
-        message: 'Employee office number: ',
+        message: "What is the manager's office number?",
         name: 'number',
       },
       
@@ -50,7 +50,7 @@ function init() {
           type: "list",
           message:"What team member would you like to create?",
           name: "option",
-          choices:["Engineer", "Intern", "Exit & Build team!"]
+          choices:["Engineer", "Intern", "Exit & build team!"]
         }
       ]).then(function(answer){
         switch (answer.option) {
@@ -72,22 +72,22 @@ function init() {
       .prompt([
         {
           type: 'input',
-          message: "Team member's name",
+          message: "What is the engineer's name",
           name: 'name',
         },
           {
             type: 'input',
-            message: 'Employee ID:',
+            message: "What is the engineer's ID number?",
             name: 'ID',
           },
           {
             type: 'input',
-            message: 'Employee email address:',
+            message: "What is the engineer's email address?",
             name: 'email',
           },
           {
             type: 'input',
-            message: 'What is your GitHub username?',
+            message: "What is the engineer's GitHub username?",
             name: 'github',
           },
           
@@ -106,22 +106,22 @@ function init() {
       .prompt([
         {
           type: 'input',
-          message: "Team member's name",
+          message: "What is the intern's name?",
           name: 'name',
         },
           {
             type: 'input',
-            message: 'Employee ID:',
+            message: "What is the intern's ID number?",
             name: 'ID',
           },
           {
             type: 'input',
-            message: 'Employee email address:',
+            message: "What is the intern's email address?",
             name: 'email',
           },
           {
             type: 'input',
-            message: 'What school do you attend?',
+            message: "What school does the intern attend?",
             name: 'school',
           },
           
