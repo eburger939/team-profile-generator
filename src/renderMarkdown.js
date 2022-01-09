@@ -112,7 +112,7 @@ function renderMarkdown(team) {
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
       
-      <title>Hello, world!</title>
+      <title>Team Generator</title>
     </head>
     
     <body class="body">
