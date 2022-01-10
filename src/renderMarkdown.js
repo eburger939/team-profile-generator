@@ -5,16 +5,16 @@ let internCard = ''
 
 function mapping(team) {
 const titles = team.map(person => {
-  const tObj = { ...person };
+  // const tObj = { ...person };
 
-  if (tObj.officeNumber) {
-    tObj.title = 'Manager'
-  } else if (tObj.github) {
-    tObj.title = 'Engineer'
-  } else if (tObj.school){
-    tObj.title = 'Intern'
+  if (person.getRole() == "Manager") {
+    person.title = 'Manager'
+  } else if (person.getRole() == "Engineer") {
+    person.title = 'Engineer'
+  } else if (person.getRole() == "Intern"){
+    person.title = 'Intern'
   }
-  return tObj
+  return person
 })
 filteringMembers(titles)
 console.log(titles)
