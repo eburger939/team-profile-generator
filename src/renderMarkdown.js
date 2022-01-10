@@ -5,7 +5,7 @@ let internCard = ''
 
 function mapping(team) {
 const titles = team.map(person => {
-  // const tObj = { ...person };
+
 
   if (person.getRole() == "Manager") {
     person.title = 'Manager'
@@ -29,21 +29,23 @@ function filteringMembers(titles){
       <div>
         <div class="card border-dark custom-column">
           <div class="card-body custom-manager-body">
-            <h5 class="card-title"><strong>${mang.name}</strong></h5>
+            <h5 class="card-title"><strong>${mang.getName()}</strong></h5>
             <p class="card-text"><i class="fas fa-mug-hot m-2"></i>Manager</p>
           </div>
-
           <ul class="list-group">
-            <div class="info-list">
-              <li class="list-group-item"><strong>ID:</strong> ${mang.id}</li>
-              <li class="list-group-item"><strong>Email:</strong><a href='mailto:${mang.email}'>${mang.email}</a></li>
-              <li class="list-group-item"><strong>Office Number:</strong> ${mang.officeNumber}</li>
-            </div>
-          </ul>
+          <div class="info-list">
+            <li class="list-group-item"><strong>ID:</strong> ${mang.getId()}</li>
+            <li class="list-group-item"><strong>Email:</strong><a href='mailto:${mang.getEmail()}'>${mang.getEmail()}</a></li>
+            <li class="list-group-item"><strong>Office Number:</strong> ${mang.getOfficeNumber()}</li>
+          </div>
+        </ul>
 
-        </div>
       </div>
-    </div>`
+    </div>
+  </div>
+
+
+`
   })  
 
 //filtering for engineer and appending to file
@@ -55,15 +57,15 @@ function filteringMembers(titles){
     engCard += `<div class="col-3">
     <div class="card border-dark custom-column">
       <div class="card-body custom-engineer-body">
-        <h5 class="card-title"><strong>${eng.name}</strong></h5>
+        <h5 class="card-title"><strong>${eng.getName()}</strong></h5>
         <p class="card-text"><i class="fas fa-glasses m-2"></i>Engineer</p>
       </div>
       <ul class="list-group">
         <div class="info-list">
-          <div class="list-group-item"><strong>ID:</strong> ${eng.id}</div>
-          <div class="list-group-item"><strong>Email: </strong><a href='mailto:${eng.email}'>${eng.email}</a></div>
+          <div class="list-group-item"><strong>ID:</strong> ${eng.getId()}</div>
+          <div class="list-group-item"><strong>Email: </strong><a href='mailto:${eng.getEmail()}'>${eng.getEmail()}</a></div>
           <div class="list-group-item"><strong>GitHub Username:</strong> <a target="_blank"
-              href="https://github.com/${eng.github}">${eng.github}</a> </div>
+              href="https://github.com/${eng.getGitHub()}">${eng.getGitHub()}</a> </div>
         </div>
       </ul>
 
@@ -78,14 +80,14 @@ console.log(filterIntern)
   internCard += `<div class="col-3">
   <div class="card border-dark custom-column">
     <div class="card-body custom-intern-body">
-      <h5 class="card-title"><strong>${intern.name}</strong></h5>
+      <h5 class="card-title"><strong>${intern.getName()}</strong></h5>
       <p class="card-text"><i class="fas fa-user-graduate m-2"></i>Intern</p>
     </div>
     <ul class="list-group">
       <div class="info-list">
-        <div class="list-group-item"><strong>ID:</strong> ${intern.id}</div>
-        <div class="list-group-item"><strong>Email: </strong> <a href='mailto:${intern.email}'>${intern.email}</a></div>
-        <div class="list-group-item"><strong>School:</strong> ${intern.school}</div>
+        <div class="list-group-item"><strong>ID:</strong> ${intern.getId()}</div>
+        <div class="list-group-item"><strong>Email: </strong> <a href='mailto:${intern.getEmail()}'>${intern.getEmail()}</a></div>
+        <div class="list-group-item"><strong>School:</strong> ${intern.getSchool()}</div>
       </div>
     </ul>
 
